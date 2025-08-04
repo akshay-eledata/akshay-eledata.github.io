@@ -1,0 +1,910 @@
+/* 
+   ENT Hospital Custom CSS
+   This file overrides the default green color (#00cb86) with the blue color from the logo (#517cb8)
+*/
+
+/* Enable fixed header */
+.top-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.top-header.fixed-menu {
+    position: fixed !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    animation: fadeInDown 0.5s ease-in-out !important;
+}
+
+/* Navigation hover background color */
+.top-header .navbar .navbar-collapse ul li a:hover {
+    background: #517cb8;
+}
+
+/* Active navigation item */
+.top-header .navbar .navbar-collapse ul li.active a,
+.top-header .navbar .navbar-collapse ul li a.active {
+    background: #517cb8;
+}
+
+/* Remove the arrow from active navigation items */
+.top-header .navbar .navbar-collapse ul li a.active::after {
+    display: none;
+}
+
+/* All instances of the green color in buttons, borders, and backgrounds */
+.new-btn-d:hover,
+.right-top ul li a:hover,
+.icon-b,
+.serviceBox:hover,
+.serviceBox:hover:before,
+.serviceBox .service-icon,
+.serviceBox:hover .service-icon,
+.blog-inner .item-meta span,
+.submit-button .btn-common,
+.cont-line .icon-b,
+.dit-right a:hover,
+.footer-box .footer-company-name a,
+a.new-btn-d.br-2:hover,
+.top-header.fixed-menu .navbar-brand {
+    color: #517cb8 !important;
+    border-color: #517cb8 !important;
+    background: #517cb8 !important;
+}
+
+/* Text color overrides */
+.tooltip-1,
+.about-main-info h2 span,
+.blog-inner h2 span,
+.footer-box .footer-company-name a {
+    color: #517cb8 !important;
+}
+
+/* Border color overrides */
+.serviceBox:hover,
+.about-main-info a.new-btn-d.br-2,
+.blog-inner a.new-btn-d.br-2,
+.cont-line .icon-b {
+    border-color: #517cb8 !important;
+}
+
+/* Background color overrides for hover states */
+.about-main-info a:hover,
+.blog-inner a:hover,
+.lbox-details a.btn:hover {
+    background: #517cb8 !important;
+    color: #ffffff !important;
+}
+
+/* Specific override for the home button in the header */
+.top-header .navbar .navbar-collapse ul li:first-child a {
+    background: #517cb8;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+    padding-top: 80px; /* Same as header height */
+}
+
+/* FadeInDown animation for fixed header */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* ENT Banner Styles */
+.ent-banner {
+    min-height: calc(100vh - 80px); /* Full viewport height minus header height */
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.ent-banner-text {
+    padding: 50px 20px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.ent-banner-text h1 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+    line-height: 1.1;
+}
+
+.ent-banner-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.ent-banner-image {
+    text-align: right;
+    height: 100%;
+}
+
+.ent-banner-image img {
+    max-height: 80vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Make banner responsive */
+@media (max-width: 991px) {
+    .ent-banner-text {
+        padding: 30px 15px;
+        text-align: center;
+    }
+    
+    .ent-banner-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .ent-banner-image img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ent-banner {
+        min-height: auto;
+        padding: 50px 0;
+    }
+    
+    .ent-banner-text h1 {
+        font-size: 48px;
+    }
+    
+    .ent-banner-image img {
+        max-height: 50vh;
+    }
+}
+
+/* Custom About Us title decoration */
+.title-box h2::after {
+    content: "";
+    position: absolute;
+    background: none; /* Remove the original background image */
+    width: 120px;
+    height: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+/* Create the custom design with black line, logo, and blue line centered under About Us */
+.title-box h2 {
+    position: relative;
+}
+
+/* Black line (left side) */
+.title-box h2::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #000000;
+    bottom: 9px;
+    right: calc(50% + 20px); /* Position to the left of center */
+}
+
+/* Blue line (right side) */
+.title-box h2::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #517cb8;
+    bottom: 9px;
+    left: calc(50% + 20px); /* Position to the right of center */
+    right: auto;
+}
+
+/* Logo in the middle */
+.title-box h2 span.logo-divider {
+    position: absolute;
+    width: 51px; /* Increased by another 30% from 39px */
+    height: 34px; /* Increased by another 30% from 26px */
+    bottom: -7px; /* Adjusted to keep it centered vertically */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: url('../images/Hospital/Logomark\ Blue.png') no-repeat center center;
+    background-size: contain;
+}
+
+/* Remove border from About Us rotating images */
+.about-m {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Logo container and previous hospital name styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.previous-name {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin-left: 20px; /* Keep margin the same */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 45px; /* Increased by 15% from 32px to move only the text */
+    line-height: 80px; /* Match the container height */
+    display: flex;
+    align-items: center;
+}
+
+.previous-name::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    color: #666;
+    font-weight: 300;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 767px) {
+    .previous-name {
+        margin-left: 25px;
+        font-size: 16px;
+        padding-left: 36px; /* Increased by another 10% from 33px */
+    }
+}
+
+/* About Us title styling */
+.title-box h2 {
+    font-size: 42px; /* Increased by 30% from default */
+    font-weight: 600;
+}
+
+/* Contact Us section styling */
+.contact-section {
+    background-color: #f8f9fa;
+}
+
+/* Facilities Section Styling */
+.facilities-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.facility-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.facility-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.facility-icon {
+    background-color: #517cb8;
+    color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facility-icon i {
+    font-size: 36px;
+}
+
+.facility-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.facility-content h3 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.facility-content p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.facility-features {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.facility-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.facility-features li i {
+    color: #517cb8;
+    margin-right: 10px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+/* Responsive adjustments for facilities */
+@media (max-width: 991px) {
+    .facility-card {
+        flex-direction: column;
+    }
+    
+    .facility-icon {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .facility-icon i {
+        font-size: 30px;
+    }
+}
+
+/* Doctors Section Styling */
+.doctors-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+}
+
+.doctors-section .row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.doctor-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    max-width: 95%; /* Larger width to fill more space */
+    margin: 0 auto; /* Center the card */
+    transition: all 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.doctor-img {
+    position: relative;
+    padding-top: 100%; /* Create a square container */
+    overflow: hidden;
+    width: 100%; /* Full width of the card */
+    margin: 0 auto; /* Center the image container */
+}
+
+.doctor-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Show the entire image without cropping */
+    object-position: center center;
+    background-color: #f8f8f8; /* Light background for contained images */
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-img img {
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.doctor-info {
+    padding: 16px; /* Reduced by 20% from 20px */
+    text-align: center;
+    border-top: 3px solid #517cb8;
+}
+
+.doctor-info h3 {
+    color: #333;
+    font-size: 18px; /* Reduced from 20px */
+    font-weight: 600;
+    margin-bottom: 4px; /* Reduced from 5px */
+}
+
+.doctor-info .title {
+    color: #517cb8;
+    font-size: 14px; /* Reduced from 16px */
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.doctor-info .credentials {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Custom column for 5 items per row */
+.col-lg-1-5 {
+    position: relative;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+@media (min-width: 992px) {
+    .col-lg-1-5 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/* Doctor silhouette placeholder */
+.doctor-placeholder {
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.doctor-placeholder i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    color: #517cb8;
+    opacity: 0.7;
+}
+
+/* Services Section */
+.services-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.service-category {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+.service-category-title {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #517cb8;
+}
+
+.service-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.service-list li {
+    padding: 6px 0;
+    font-size: 15px;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-list li i {
+    color: #517cb8;
+    margin-right: 8px;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 250px; /* Fixed height for all review cards */
+    transition: all 0.3s ease;
+    border-top: 3px solid #517cb8;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Removed duplicate rule */
+
+.review-header h4 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.stars {
+    color: #ffc107;
+    margin-bottom: 5px;
+}
+
+.verified {
+    color: #517cb8;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.review-header {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+.review-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
+#reviewsCarousel {
+    min-height: 320px; /* Set a fixed minimum height for the carousel */
+}
+
+#reviewsCarousel .carousel-inner {
+    min-height: 320px; /* Ensure inner content maintains height */
+}
+
+#reviewsCarousel .carousel-item {
+    height: 100%;
+}
+
+#reviewsCarousel .carousel-indicators {
+    bottom: -40px;
+}
+
+#reviewsCarousel .carousel-indicators li {
+    background-color: #ccc;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+#reviewsCarousel .carousel-indicators li.active {
+    background-color: #517cb8;
+}
+
+#reviewsCarousel .carousel-control-prev,
+#reviewsCarousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: #517cb8;
+    border-radius: 50%;
+    opacity: 0.8;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#reviewsCarousel .carousel-control-prev {
+    left: -50px;
+}
+
+#reviewsCarousel .carousel-control-next {
+    right: -50px;
+}
+
+#reviewsCarousel .carousel-control-prev-icon,
+#reviewsCarousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 991px) {
+    #reviewsCarousel .carousel-control-prev,
+    #reviewsCarousel .carousel-control-next {
+        display: none;
+    }
+}
+
+.contact-form-block, .contact-info-block {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.contact-form label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-control:focus {
+    border-color: #517cb8;
+    box-shadow: 0 0 0 0.2rem rgba(81, 124, 184, 0.25);
+}
+
+.contact-form textarea.form-control {
+    min-height: 150px;
+}
+
+.contact-form button.new-btn-d {
+    background-color: #517cb8;
+    border-color: #517cb8;
+    padding: 12px 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.contact-form button.new-btn-d:hover {
+    background-color: #3c5d8a;
+    border-color: #3c5d8a;
+}
+
+.contact-info-block .feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-info-block .feature-title i {
+    color: #517cb8;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.contact-info-block .feature-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-info-block .feature-blurb-text {
+    margin-bottom: 30px;
+}
+
+.contact-info-block .feature-blurb-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Mission Statement Styling */
+.mission-text {
+    font-size: 20px; /* Decreased by 20% from 25px */
+    line-height: 1.7;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.enlarged-text {
+    font-weight: 400;
+    color: #333;
+}
+
+/* Spacer utility - reduced by half */
+.spacer-30 {
+    height: 15px;
+    width: 100%;
+    clear: both;
+}
+
+/* Values Section Styling */
+.values-row {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* Make all service boxes equal height and consistent */
+.serviceBox {
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Value boxes specific styling */
+.value-box {
+    height: 320px; /* Increased height to accommodate icons */
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Value icon styling */
+.value-icon {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.value-icon i {
+    font-size: 36px;
+    color: #517cb8;
+    background-color: rgba(81, 124, 184, 0.1);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Remove triangle at top right */
+.value-box::before,
+.value-box::after {
+    display: none;
+}
+
+/* Equal spacing for value box content */
+.value-box .title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #517cb8;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.value-box .description {
+    flex-grow: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Make description take up available space */
+.serviceBox .description {
+    flex-grow: 1;
+}
+
+/* Ensure all items in the carousel have equal height */
+.owl-carousel .owl-item {
+    display: flex;
+}
+
+.owl-carousel .item {
+    width: 100%;
+}
+
+/* Footer styling */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-img {
+    width: 40px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.footer-logo h3 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.footer-social {
+    display: flex;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-left: 10px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #517cb8;
+    color: #ffffff;
+}
+
+.footer-company-name {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+/* Adjust contact form textarea placeholder position */
+#message::placeholder {
+    padding-top: 10px;
+    line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+}
