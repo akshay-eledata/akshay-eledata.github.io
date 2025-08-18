@@ -814,6 +814,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .value-box .description {
@@ -821,6 +822,21 @@ body {
     font-size: 16px;
     line-height: 1.6;
     text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Hover states for value boxes to ensure readability */
+.value-box:hover .title {
+    color: #ffffff !important;
+}
+
+.value-box:hover .description {
+    color: #ffffff !important;
+}
+
+.value-box:hover .value-icon i {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Make description take up available space */
@@ -891,6 +907,27 @@ body {
     text-align: center;
     margin-bottom: 0;
     padding-bottom: 20px;
+}
+
+/* Map block styling */
+.map-block {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.map-container {
+    margin-top: 15px;
+}
+
+.map-container iframe {
+    transition: all 0.3s ease;
+}
+
+.map-container iframe:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Adjust contact form textarea placeholder position */
